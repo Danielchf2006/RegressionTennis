@@ -6,6 +6,11 @@ The Purpose: Using the datas from Association of Tennis Professionals (ATP) Men'
 
 Python 3.9.6
 
+## Usage
+Run the script using:
+```python
+python3 main.py
+```
 ### Installation
 To run this project, you need to have Python installed along with the following libraries:
 numpy, pandas, seaborn, matplotlib, scikit-learn
