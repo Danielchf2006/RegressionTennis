@@ -28,6 +28,12 @@ Losses: Number of losses.
 Win%: Win percentage.
 Other columns representing various player statistics (e.g., First serve, Aces, Double faults, etc.).
 
+The purpose of 'pd.read_csv('tennis_stats_99.csv')' is to Specify the path to the CSV file to be loaded. Ensure that the file path is correct and accessible from the script's location.
+'tennis_stats_99' = CSV dataset used in the project.
+```python
+tennis_data = pd.read_csv('tennis_stats_99.csv')
+```
+
 'Win%' is an added dependent variable and is used as the evaluator in this project. The dataset is cleaned by removing rows with missing 'Win%' values and duplicate entries based on the 'Player' column.
 ```Python
 tennis_data = tennis_data.dropna(subset=['Win%'])
@@ -36,6 +42,7 @@ tennis_data = tennis_data.drop_duplicates(subset='Player')
 ### Exploratory Data Analysis (EDA)
 
 Scatter plots and histograms are created for independent variables against 'Wins', 'Losses', 'Winnings', and 'Win%'. It visualize relationships each independent and outcome variables. 
+The script includes exploratory data analysis to help understand the data and relationships between variables.
 
 ### Prepare Data for Modeling
 
@@ -48,7 +55,7 @@ y = tennis_data1_np[:, -1] (Only Win%)
 x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=99)
 ```
 ### Evaluation of Model Performance 
-
+The model's performance metrics are printed and visualized to evaluate its accuracy and reliability.
 The linear regression model is evaluated using the following metrics:
 Mean Absolute Error (MAE): Measures the average magnitude of errors in a set of predictions.
 Mean Squared Error (MSE): Measures the average of the squares of the errors.
